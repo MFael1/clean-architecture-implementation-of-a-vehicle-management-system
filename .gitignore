@@ -1,0 +1,15 @@
+# Build results
+bin/
+obj/
+
+# Rider
+.idea/
+
+# Visual Studio (in case someone on the team uses it)
+.vs/
+*.suo
+*.user
+
+# Common temp files
+*.tmp
+*~
