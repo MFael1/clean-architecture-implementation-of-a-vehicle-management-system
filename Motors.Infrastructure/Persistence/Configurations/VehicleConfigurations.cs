@@ -10,8 +10,15 @@ public class VehicleConfigurations : IEntityTypeConfiguration<Vehicle>
     {
         builder.HasKey(v => v.Id);
         
-        builder.Property(v => v.Id).ValueGeneratedOnAdd();
+        builder.Property(v => v.Id)
+            .UseIdentityColumn()
+            .ValueGeneratedOnAdd();
 
-        builder.Property(v => v.Brand).HasMaxLength(50).IsRequired();
+        builder.Property(v => v.Brand)
+            .HasMaxLength(50)
+            .IsRequired();
+
+        builder.Property(v => v.Model)
+            .HasMaxLength(50);
     }
 }

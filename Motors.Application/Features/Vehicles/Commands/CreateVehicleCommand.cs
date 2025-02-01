@@ -2,7 +2,7 @@ using MediatR;
 
 namespace Motors.Application.Features.Vehicles.Commands;
 
-public abstract record CreateVehicleCommand : IRequest<int>
+public record CreateVehicleCommand : IRequest<int>
 {
     public string? Brand { get; set; }
 
