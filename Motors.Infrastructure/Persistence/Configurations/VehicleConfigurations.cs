@@ -20,5 +20,7 @@ public class VehicleConfigurations : IEntityTypeConfiguration<Vehicle>
 
         builder.Property(v => v.Model)
             .HasMaxLength(50);
+        
+        builder.HasIndex(v => new {v.Brand, v.Model}).IsUnique();
     }
 }
