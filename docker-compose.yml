@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5167:80"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=motors_db;Username=fael;Password=hello
+    networks:
+      - fael-network
+
+  postgres:
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=fael
+      - POSTGRES_PASSWORD=hello
+      - POSTGRES_DB=motors_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - fael-network
+
+networks:
+  fael-network:
+    driver: bridge
+
+volumes:
+  postgres-data:

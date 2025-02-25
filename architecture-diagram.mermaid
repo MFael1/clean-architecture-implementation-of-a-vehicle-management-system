@@ -1,0 +1,57 @@
+graph TD
+    subgraph "API Layer"
+        API[Motors.Api]
+        Controllers[Controllers]
+        Middleware[Middleware]
+        API --> Controllers
+        API --> Middleware
+    end
+    
+    subgraph "Application Layer"
+        App[Motors.Application]
+        Commands[Commands]
+        Queries[Queries]
+        Validators[Validators]
+        EventHandlers[Event Handlers]
+        App --> Commands
+        App --> Queries
+        App --> Validators
+        App --> EventHandlers
+    end
+    
+    subgraph "Domain Layer"
+        Domain[Motors.Domain]
+        Entities[Entities]
+        ValueObjects[Value Objects]
+        DomainEvents[Domain Events]
+        Domain --> Entities
+        Domain --> ValueObjects
+        Domain --> DomainEvents
+    end
+    
+    subgraph "Infrastructure Layer"
+        Infra[Motors.Infrastructure]
+        Repositories[Repositories]
+        DbContext[DbContext]
+        Migrations[Migrations]
+        Infra --> Repositories
+        Infra --> DbContext
+        Infra --> Migrations
+    end
+    
+    Controllers --> Commands
+    Controllers --> Queries
+    Commands --> Domain
+    Queries --> Domain
+    Repositories --> Domain
+    DbContext --> Entities
+    Commands --> Repositories
+    Queries --> Repositories
+    EventHandlers --> DomainEvents
+    
+    Client[Client] --> API
+    
+    style Domain fill:#f9f,stroke:#333,stroke-width:2px
+    style App fill:#bbf,stroke:#333,stroke-width:2px
+    style Infra fill:#bfb,stroke:#333,stroke-width:2px
+    style API fill:#fbb,stroke:#333,stroke-width:2px
