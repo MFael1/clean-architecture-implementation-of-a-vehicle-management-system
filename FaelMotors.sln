@@ -1,12 +1,17 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Api", "Motors.Api\Motors.Api.csproj", "{E7DD40C1-8812-4780-8C79-E1E69EAF7571}"
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B21E7D69-D1A6-4F4E-8CAF-9F7D0EDA8C51}"
+	ProjectSection(SolutionItems) = preProject
+		src\Dockerfile = src\Dockerfile
+		src\docker-compose.yml = src\docker-compose.yml
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Domain", "Motors.Domain\Motors.Domain.csproj", "{48534587-A540-45F5-A029-0A9408D7BD6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Api", "src\Motors.Api\Motors.Api.csproj", "{E7DD40C1-8812-4780-8C79-E1E69EAF7571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Infrastructure", "Motors.Infrastructure\Motors.Infrastructure.csproj", "{8C8B0FC2-53C9-4830-933A-EBC9B9B058E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Domain", "src\Motors.Domain\Motors.Domain.csproj", "{48534587-A540-45F5-A029-0A9408D7BD6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Application", "Motors.Application\Motors.Application.csproj", "{5C190970-2084-420A-9B6D-71FB9C29F16D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Infrastructure", "src\Motors.Infrastructure\Motors.Infrastructure.csproj", "{8C8B0FC2-53C9-4830-933A-EBC9B9B058E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motors.Application", "src\Motors.Application\Motors.Application.csproj", "{5C190970-2084-420A-9B6D-71FB9C29F16D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,11 @@ Global
 		{5C190970-2084-420A-9B6D-71FB9C29F16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C190970-2084-420A-9B6D-71FB9C29F16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C190970-2084-420A-9B6D-71FB9C29F16D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7DD40C1-8812-4780-8C79-E1E69EAF7571} = {B21E7D69-D1A6-4F4E-8CAF-9F7D0EDA8C51}
+		{48534587-A540-45F5-A029-0A9408D7BD6C} = {B21E7D69-D1A6-4F4E-8CAF-9F7D0EDA8C51}
+		{8C8B0FC2-53C9-4830-933A-EBC9B9B058E7} = {B21E7D69-D1A6-4F4E-8CAF-9F7D0EDA8C51}
+		{5C190970-2084-420A-9B6D-71FB9C29F16D} = {B21E7D69-D1A6-4F4E-8CAF-9F7D0EDA8C51}
 	EndGlobalSection
 EndGlobal
