@@ -9,7 +9,6 @@ public class VehicleConfigurations : IEntityTypeConfiguration<Vehicle>
     public void Configure(EntityTypeBuilder<Vehicle> builder)
     {
         builder.HasKey(v => v.Id);
-        
         builder.Property(v => v.Id)
             .UseIdentityColumn()
             .ValueGeneratedOnAdd();
