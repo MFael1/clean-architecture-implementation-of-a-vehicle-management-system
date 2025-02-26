@@ -1,9 +1,8 @@
-// Motors.Api/Middlewares/GlobalExceptionHandler.cs
+using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using FluentValidation;
 
-namespace Motors.Api.Middlewares;
+namespace Maintenance.Api.Middlewares;
 
 public class GlobalExceptionHandler : IExceptionHandler
 {

@@ -1,36 +1,13 @@
 version: '3.8'
 
 services:
-  api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: rabbitmq
     ports:
-      - "5167:80"
-    depends_on:
-      - postgres
+      - "5672:5672"  # AMQP port
+      - "15672:15672"  # Management UI port
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=postgres;Database=motors_db;Username=fael;Password=hello
-    networks:
-      - fael-network
-
-  postgres:
-    image: postgres:16
-    environment:
-      - POSTGRES_USER=fael
-      - POSTGRES_PASSWORD=hello
-      - POSTGRES_DB=motors_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    networks:
-      - fael-network
-
-networks:
-  fael-network:
-    driver: bridge
-
-volumes:
-  postgres-data:
+      RABBITMQ_DEFAULT_USER: "user"
+      RABBITMQ_DEFAULT_PASS: "password"
+    

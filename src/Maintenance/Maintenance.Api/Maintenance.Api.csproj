@@ -16,13 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Motors.Application\Motors.Application.csproj" />
-      <ProjectReference Include="..\Motors.Infrastructure\Motors.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Filters\" />
-      <Folder Include="Models\" />
+      <ProjectReference Include="..\Maintenance.Application\Maintenance.Application.csproj" />
+      <ProjectReference Include="..\Maintenance.Infrastructure\Maintenance.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
